@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="1" name="TestsJUnit" time="0.078" errors="0" skipped="1">
+<testsuite tests="11" failures="3" name="TestsJUnit" time="0.11" errors="0" skipped="1">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="12.0.1+12"/>
@@ -61,17 +61,11 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="TestsJUnit" name="checkDivision" time="0.016"/>
-  <testcase classname="TestsJUnit" name="checkMultiply" time="0"/>
-  <testcase classname="TestsJUnit" name="testNElements" time="0.015">
-    <skipped/>
-  </testcase>
-  <testcase classname="TestsJUnit" name="checkAddTwo" time="0.047">
-    <failure message="Expected result must be 10, but actual result is 11 expected:&lt;10&gt; but was:&lt;11&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Expected result must be 10, but actual result is 11 expected:&lt;10&gt; but was:&lt;11&gt;
+  <testcase classname="TestsJUnit" name="checkMultiplyOne" time="0.015"/>
+  <testcase classname="TestsJUnit" name="checkMultiplyTwo" time="0.032">
+    <failure message="Multiply could&apos;t was negative" type="java.lang.AssertionError">java.lang.AssertionError: Multiply could&apos;t was negative
 	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:834)
-	at org.junit.Assert.assertEquals(Assert.java:645)
-	at TestsJUnit.checkAddTwo(TestsJUnit.java:50)
+	at TestsJUnit.checkMultiplyTwo(TestsJUnit.java:37)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -105,6 +99,91 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
   </testcase>
+  <testcase classname="TestsJUnit" name="testNElements" time="0.032">
+    <skipped/>
+  </testcase>
+  <testcase classname="TestsJUnit" name="checkAddOne" time="0"/>
+  <testcase classname="TestsJUnit" name="checkAddTwo" time="0.015">
+    <failure message="Expected result must be 10, but actual result is 11 expected:&lt;10&gt; but was:&lt;11&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Expected result must be 10, but actual result is 11 expected:&lt;10&gt; but was:&lt;11&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at TestsJUnit.checkAddTwo(TestsJUnit.java:66)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</failure>
+  </testcase>
+  <testcase classname="TestsJUnit" name="checkMultiplyThree" time="0.016"/>
+  <testcase classname="TestsJUnit" name="checkDivisionThree" time="0"/>
   <testcase classname="TestsJUnit" name="testDivisionException" time="0"/>
-  <testcase classname="TestsJUnit" name="checkAdd" time="0"/>
+  <testcase classname="TestsJUnit" name="checkAddThree" time="0"/>
+  <testcase classname="TestsJUnit" name="checkDivisionOne" time="0"/>
+  <testcase classname="TestsJUnit" name="checkDivisionTwo" time="0">
+    <failure message="This count is NULL expected null, but was:&lt;2&gt;" type="java.lang.AssertionError">java.lang.AssertionError: This count is NULL expected null, but was:&lt;2&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotNull(Assert.java:755)
+	at org.junit.Assert.assertNull(Assert.java:737)
+	at TestsJUnit.checkDivisionTwo(TestsJUnit.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</failure>
+  </testcase>
 </testsuite>

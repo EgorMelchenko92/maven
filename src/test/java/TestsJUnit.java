@@ -1,6 +1,7 @@
 import org.junit.*;
 
-import static org.junit.Assert.assertEquals;
+import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.*;
 
 public class TestsJUnit {
 
@@ -15,17 +16,30 @@ public class TestsJUnit {
     }
     @AfterClass
     public static void testMessageCatClass(){
+        cat=new Cat();
         System.out.println("Cat Class Test Completed");
     }
 
     @Test
-    public void checkMultiply() throws ArithmeticException{
+    public void checkMultiplyOne() throws ArithmeticException{
         int result=cat.countAnimals(5,3);
         try {
             assertEquals("5 x 3 must be 15", 15, result);
         }catch (ArithmeticException e){
             return ;
         }
+    }
+
+    @Test
+    public void checkMultiplyTwo(){
+        cat.countAnimals(-5,3);
+        fail("Multiply could't was negative");
+    }
+
+    @Test
+    public void checkMultiplyThree(){
+        cat.countAnimals(5,5);
+        assertTrue("Values are identical",5==5);
     }
 
     @BeforeClass
@@ -35,11 +49,12 @@ public class TestsJUnit {
     }
     @AfterClass
     public static void testMessageBirdClass(){
+        bird=new Bird();
         System.out.println("Bird Class Test Completed");
     }
 
     @Test
-    public void checkAdd(){
+    public void checkAddOne(){
         int result = bird.countAnimals(3,7);
         assertEquals(10,result);
     }
@@ -50,6 +65,12 @@ public class TestsJUnit {
         assertEquals("Expected result must be 10, but actual result is 11",10,11);
     }
 
+    @Test
+    public void checkAddThree(){
+        bird.countAnimals(4,9);
+        assertSame("Variables refer to one object",true,true);
+    }
+
 
     @BeforeClass
     public static void initTestDogClass(){
@@ -58,13 +79,30 @@ public class TestsJUnit {
     }
     @AfterClass
     public static void testMessageDogClass(){
+        dog=new Dog();
         System.out.println("Dog Class Test Completed");
     }
 
     @Test
-    public void checkDivision(){
+    public void checkDivisionOne(){
         double result=dog.countAnimals(20,10);
         Assert.assertEquals("20 / 10 must be 2",2,result,0.0);
+    }
+
+    @Test
+    public void checkDivisionTwo() throws ArithmeticException {
+        int result = dog.countAnimals(6, 3);
+        try {
+            assertNull("This count is NULL", result);
+        } catch (ArithmeticException e){
+            return;
+        }
+    }
+
+    @Test
+    public void checkDivisionThree(){
+        int result = dog.countAnimals(8,4);
+        assertNotNull("This count is not NULL",result);
     }
 
     @Test(expected = ArithmeticException.class)
