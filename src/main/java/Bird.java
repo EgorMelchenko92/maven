@@ -11,4 +11,9 @@ public class Bird implements Animal {
     public String voice() {
         return "KAR";
     }
+
+    @Override
+    public int countAnimals(int a, int b) {
+        return a+b;
+    }
 }

@@ -1,6 +1,7 @@
-BirdException.class
-TestDog.class
+TestsJUnit.class
 TestCat.class
 TestBird.class
 Maintest.class
+BirdException.class
+TestDog.class
 VoiceException.class

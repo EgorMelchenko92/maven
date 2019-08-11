@@ -11,4 +11,9 @@ public class Cat implements Animal {
     public String voice() {
         return "MyaYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY";
     }
+
+    @Override
+    public int countAnimals(int a, int b) {
+        return a*b;
+    }
 }

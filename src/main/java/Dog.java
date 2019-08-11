@@ -11,4 +11,9 @@ public class Dog implements Animal{
     public String voice() {
         return "WOOF-WOOF-WOOF-WOOF-WOOF";
     }
+
+    @Override
+    public int countAnimals(int a, int b) {
+        return a/b;
+    }
 }
